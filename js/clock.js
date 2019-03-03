@@ -183,7 +183,7 @@ const AnalogClock = {
       */ 
       let date = new Date(),
           hours = date.getHours()
-          hours = hours % 12 || 12,
+          twelveHours = hours % 12 || 12,
           minutes = date.getMinutes(),
           seconds = date.getSeconds();
 
@@ -191,7 +191,7 @@ const AnalogClock = {
 
       return {
         amPm: hours >= 12 ? "pm" : "am",
-        hours: hours,
+        hours: twelveHours,
         minutes: minutes,
         seconds: seconds,
         secondsDegree: seconds * 6,
