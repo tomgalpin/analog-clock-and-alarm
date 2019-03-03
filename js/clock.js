@@ -187,7 +187,7 @@ const AnalogClock = {
           minutes = date.getMinutes(),
           seconds = date.getSeconds();
 
-      AnalogClock.RunClock.showClockMeta(hours, minutes, seconds);
+      AnalogClock.RunClock.showClockMeta(twelveHours, minutes, seconds);
 
       return {
         amPm: hours >= 12 ? "pm" : "am",

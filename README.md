@@ -28,6 +28,8 @@ https://tomgalpin.github.io/analog-clock-and-alarm/clock.html
     │     ├── /scss  => SASS files 
     │     ├── styles.css => compiled CSS from SASS files
     │     └── styles.css.map => SASS mapping
+    ├── /assets 
+    │     └── favicon.ico
     └── clock.html
 
 ## Run locally:
