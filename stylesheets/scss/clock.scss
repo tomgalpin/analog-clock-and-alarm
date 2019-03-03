@@ -1,0 +1,89 @@
+#clock-container {
+  @include circle(400px);
+  border: 10px solid $slateGray;
+  margin: 40px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  .clock-nums-container {
+    @include circle(320px);
+    position: relative;
+    margin: 0 auto;
+    li {
+      position: absolute;
+      font-size: 20px;
+      font-weight: bold;
+      &.big-num {
+        font-size: 40px;
+      }
+    }
+  }
+  .hand {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transform-origin: 0px 0px;
+    &.hour {
+      background-color: $black;
+      height: 80px;
+      width: 6px;
+      left: 50%;
+      margin-left: -3px;
+      top: 120px;
+      z-index: 1;
+      @include border-radius(3px);
+      transform-origin: 50% 80px;
+    }
+    &.minute {
+      background-color: $black;
+      height: 100px;
+      width: 6px;
+      left: 50%;
+      margin-left: -3px;
+      top: 100px;
+      z-index: 2;
+      @include border-radius(3px);
+      transform-origin: 50% 100px;
+    }
+    &.second {
+      background-color: $red;
+      height: 120px;
+      width: 2px;
+      left: 50%;
+      margin-left: -1px;
+      top: 80px;
+      z-index: 3;
+      transform-origin: 50% 120px;
+    }
+  }
+  .inner-pt {
+    @include circle(20px);
+    background-color: $black;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: -10px 0 0 -10px;
+  }
+  .am-pm-container {
+    width: 60px;
+    height: 40px;
+    @include border-radius(5px);
+    border: 3px solid $slateGray;
+    position: absolute;
+    left: 50%;
+    bottom: 75px;
+    margin-left: -30px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    span { 
+      font-size: 25px;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+  }
+}

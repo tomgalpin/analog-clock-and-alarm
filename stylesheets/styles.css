@@ -1,0 +1,390 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* ----------------------------------------------------------------------------------------------------
+Super Form Reset
+From:  https://gist.github.com/anthonyshort/552543
+;
+A couple of things to watch out for:
+- IE8: If a text input doesn't have padding on all sides or none the text won't be centered.
+- The default border sizes on text inputs in all UAs seem to be slightly different. You're better off using custom borders.
+- You NEED to set the font-size and family on all form elements
+- Search inputs need to have their appearance reset and the box-sizing set to content-box to match other UAs
+- You can style the upload button in webkit using ::-webkit-file-upload-button
+- ::-webkit-file-upload-button selectors can't be used in the same selector as normal ones. FF and IE freak out.
+- IE: You don't need to fake inline-block with labels and form controls in IE. They function as inline-block.
+- By turning off ::-webkit-search-decoration, it removes the extra whitespace on the left on search inputs
+----------------------------------------------------------------------------------------------------*/
+input,
+label,
+select,
+button,
+textarea {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  display: inline-block;
+  vertical-align: middle;
+  white-space: normal;
+  background: none;
+  line-height: 1;
+  /* Browsers have different default form fonts */
+  font-size: 13px;
+  font-family: Arial;
+}
+
+/* Remove the stupid outer glow in Webkit */
+input:focus {
+  outline: 0;
+}
+
+/* Box Sizing Reset
+-----------------------------------------------*/
+/* All of our custom controls should be what we expect them to be */
+input,
+textarea {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+/* These elements are usually rendered a certain way by the browser */
+button,
+input[type=reset],
+input[type=button],
+input[type=submit],
+input[type=checkbox],
+input[type=radio],
+select {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* Text Inputs
+-----------------------------------------------*/
+/* Button Controls
+-----------------------------------------------*/
+input[type=checkbox],
+input[type=radio] {
+  width: 13px;
+  height: 13px;
+}
+
+/* File Uploads
+-----------------------------------------------*/
+/* Search Input
+-----------------------------------------------*/
+/* Make webkit render the search input like a normal text field */
+input[type=search] {
+  -webkit-appearance: textfield;
+  -webkit-box-sizing: content-box;
+}
+
+/* Turn off the recent search for webkit. It adds about 15px padding on the left */
+::-webkit-search-decoration {
+  display: none;
+}
+
+/* Buttons
+-----------------------------------------------*/
+button,
+input[type=reset],
+input[type=button],
+input[type=submit] {
+  /* Fix IE7 display bug */
+  overflow: visible;
+  width: auto;
+}
+
+/* IE8 and FF freak out if this rule is within another selector */
+::-webkit-file-upload-button {
+  padding: 0;
+  border: 0;
+  background: none;
+}
+
+/* Textarea
+-----------------------------------------------*/
+textarea {
+  /* Move the label to the top */
+  vertical-align: top;
+  /* Turn off scroll bars in IE unless needed */
+  overflow: auto;
+}
+
+/* Selects
+-----------------------------------------------*/
+select[multiple] {
+  /* Move the label to the top */
+  vertical-align: top;
+}
+
+body {
+  padding: 40px;
+}
+
+h1, h4, p, span, label {
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+}
+
+h1, h4 {
+  text-align: center;
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 60px;
+}
+
+h4 {
+  font-size: 30px;
+}
+
+#clock-container {
+  width: 400px;
+  height: 400px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  border-radius: 50%;
+  border: 10px solid #708090;
+  margin: 40px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+#clock-container .clock-nums-container {
+  width: 320px;
+  height: 320px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  border-radius: 50%;
+  position: relative;
+  margin: 0 auto;
+}
+#clock-container .clock-nums-container li {
+  position: absolute;
+  font-size: 20px;
+  font-weight: bold;
+}
+#clock-container .clock-nums-container li.big-num {
+  font-size: 40px;
+}
+#clock-container .hand {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  transform-origin: 0px 0px;
+}
+#clock-container .hand.hour {
+  background-color: #000;
+  height: 80px;
+  width: 6px;
+  left: 50%;
+  margin-left: -3px;
+  top: 120px;
+  z-index: 1;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  border-radius: 3px;
+  transform-origin: 50% 80px;
+}
+#clock-container .hand.minute {
+  background-color: #000;
+  height: 100px;
+  width: 6px;
+  left: 50%;
+  margin-left: -3px;
+  top: 100px;
+  z-index: 2;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  border-radius: 3px;
+  transform-origin: 50% 100px;
+}
+#clock-container .hand.second {
+  background-color: #ff0000;
+  height: 120px;
+  width: 2px;
+  left: 50%;
+  margin-left: -1px;
+  top: 80px;
+  z-index: 3;
+  transform-origin: 50% 120px;
+}
+#clock-container .inner-pt {
+  width: 20px;
+  height: 20px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  border-radius: 50%;
+  background-color: #000;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin: -10px 0 0 -10px;
+}
+#clock-container .am-pm-container {
+  width: 60px;
+  height: 40px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  border-radius: 5px;
+  border: 3px solid #708090;
+  position: absolute;
+  left: 50%;
+  bottom: 75px;
+  margin-left: -30px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+#clock-container .am-pm-container span {
+  font-size: 25px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+#current-time-container {
+  border: 1px solid #000;
+  text-align: center;
+  width: 400px;
+  padding: 20px;
+  margin: 20px auto;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  border-radius: 5px;
+}
+#current-time-container p, #current-time-container span {
+  font-size: 12px;
+}
+
+#alarm-container {
+  width: 400px;
+  border: 2px solid #708090;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  border-radius: 4px;
+  margin: 40px auto;
+  padding: 20px 20px 30px 20px;
+}
+#alarm-container form {
+  width: 60%;
+  margin: 20px auto 0 auto;
+}
+#alarm-container label {
+  font-size: 20px;
+  font-weight: bold;
+  width: 50%;
+  margin-right: 20px;
+  text-align: right;
+}
+#alarm-container input {
+  border: 2px solid #000;
+  width: 40px;
+  height: 30px;
+  border-radius: 5px;
+  padding: 5px;
+  font-size: 25px;
+  text-align: center;
+}
+#alarm-container button {
+  width: 100%;
+  height: 50px;
+  background-color: #708090;
+  color: #fff;
+  font-size: 25px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+}
+#alarm-container button.disabled {
+  cursor: default;
+  background-color: #808080;
+  color: #000;
+  opacity: 0.5;
+}
+#alarm-container .form-element {
+  margin: 0 0 10px 0;
+}
+#alarm-container .alarm-response {
+  height: 120px;
+}
+#alarm-container .alarm-response p {
+  display: none;
+  font-size: 60px;
+  line-height: 120px;
+  font-weight: bold;
+  text-align: center;
+}
+#alarm-container .alarm-response p.nope {
+  color: #ff0000;
+}
+#alarm-container .alarm-response p.yep {
+  color: #008000;
+}
+
+/*# sourceMappingURL=styles.css.map */

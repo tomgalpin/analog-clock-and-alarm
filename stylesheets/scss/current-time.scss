@@ -1,0 +1,9 @@
+#current-time-container {
+  border: 1px solid $black;
+  text-align: center;
+  width: 400px;
+  padding: 20px;
+  margin: 20px auto;
+  @include border-radius(5px);
+  p, span { font-size: 12px; }
+}

@@ -1,0 +1,60 @@
+#alarm-container {
+  width: 400px;
+  border: 2px solid $slateGray;
+  @include border-radius(4px);
+  margin: 40px auto;
+  padding: 20px 20px 30px 20px;
+  form {
+    width: 60%;
+    margin: 20px auto 0 auto;
+  }
+  label {
+    font-size: 20px;
+    font-weight: bold;
+    width: 50%;
+    margin-right: 20px;
+    text-align: right;
+  }
+  input {
+    border: 2px solid $black;
+    width: 40px;
+    height: 30px;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 25px;
+    text-align: center;
+
+  }
+  button {
+    width: 100%;
+    height: 50px;
+    background-color: $slateGray;
+    color: $white;
+    font-size: 25px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    &.disabled {
+      cursor: default;
+      background-color: $gray;
+      color: $black;
+      opacity: 0.5;
+
+    }
+  }
+  .form-element {
+    margin: 0 0 10px 0;
+  }
+  .alarm-response {
+    height: 120px;
+    p {
+      display: none;
+      font-size: 60px;
+      line-height: 120px;
+      font-weight: bold;
+      text-align: center;
+      &.nope { color: $red; }
+      &.yep { color: $green; }
+    }
+  }
+}
