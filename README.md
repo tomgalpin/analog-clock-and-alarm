@@ -1,6 +1,9 @@
 # Tom's Javascript Analog Clock and Alarm
 An analog clock and alarm clock.
 
+You can see it live at:
+https://tomgalpin.github.io/analog-clock-and-alarm/clock.html
+
 ## Notes: 
 1. Did not add ability to turn off alarm clock.  Would be pretty easy, but ran out of steam.
 2. Did not do Bonus portion either.
@@ -26,6 +29,9 @@ An analog clock and alarm clock.
     │     ├── styles.css => compiled CSS from SASS files
     │     └── styles.css.map => SASS mapping
     └── clock.html
+
+## Run locally:
+Open `clock.html` into your browser.
 
 ## Run SASS:
 https://sass-lang.com/guide
