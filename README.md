@@ -6,8 +6,7 @@ https://tomgalpin.github.io/analog-clock-and-alarm/clock.html
 
 ## Notes: 
 1. Did not add ability to turn off alarm clock.  Would be pretty easy, but ran out of steam.
-2. Did not do Bonus portion either.
-3. Used jquery for to make DOM manipulation and styling eaiser/quicker
+2. Used jquery for to make DOM manipulation and styling eaiser/quicker
 
 ## Areas of Improvement:
 1. Add some simple tests
